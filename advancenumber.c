@@ -1,15 +1,16 @@
 //incomplete code cause i am still working on it 
 #include <stdio.h>
-int main(){
-    int choice,a,b,sum=0,i,n,product=1,count=0;
-    printf("Enter 1 to find if a number is armstrong number\n 2 to find if a number is strong number\n  3 to find if a num  is harshad number \n 4 to find LCM of number\n 5 to find HCF of number");
+int main()
+{
+    int choice,a,b,sum=0,i,n,product=1,count=0,Hcf,small ;
+    printf("Enter 1 to find if a number is armstrong number\n 2 to find if a number is strong number\n 3 to find if a num  is harshad number \n 4 to find LCM of number\n 5 to find HCF of number");
     scanf("%d",&choice);
     switch(choice)
       {case 1: //check if sum of digits to the power of number of digit is equal to number
        printf("Enter the number");
        scanf("%d",&a);
         if(a==0)
-       { printf("zero is not a armstrong number");}
+       { printf("zero is  a armstrong number");}
         else {
             b=a;
        while(a!=0)
@@ -45,8 +46,8 @@ int main(){
            product = 1;
            for(i = 1; i <= n; i++)
            {
-        product *= i;
-        }
+             product *= i;
+           }
 
            sum+=product;
            a=a/10;
@@ -75,6 +76,42 @@ int main(){
       {printf("not harshad number");}}
       break;
     case 4: //lcm of two numbers
-      }
+       printf("Enter two numbers");
+       scanf("%d %d",&a,&b);
+       small=(a>b)?a:b;
+       for(i = small ; i <= a*b; i++)
+       {
+           if(i%a==0 && i%b==0)
+           {
+               printf("LCM is %d",i);
+            break;  
+           }
+       }
+       break;
+    case 5: //hcf of two numbers
+       printf("Enter two numbers");
+       scanf("%d %d",&a,&b);
+       small=(a<b)?a:b;
+       if(a==0 && b==0)
+       { printf("HCF is 0");}
+       else if(a==0)
+       { printf("HCF is %d",b);}
+       else if(b==0)
+       { printf("HCF is %d",a);}
+       else{
+       for(i = 1; i <= small; i++)
+       {
+           if(a%i==0 && b%i==0)
+           {
+               Hcf=i;
+           }
+           
+       }
+       printf("HCF is %d",Hcf);
+        } break;
+      
+    default:
+       printf("invalid input");
+  }      
 return 0;
 }
