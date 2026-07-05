@@ -48,6 +48,11 @@ while (a[0][0] == '1' ||
        (a[0][0] == 'X' && a[1][1] == 'X' && a[2][2] == 'X') ||
        (a[0][2] == 'X' && a[1][1] == 'X' && a[2][0] == 'X')) {
         printf("Player X wins!\n");
+        for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%c ", a[i][j]);
+        }
+        printf("\n");}
         break;
     } else if ((a[0][0] == 'O' && a[0][1] == 'O' && a[0][2] == 'O') ||
                (a[1][0] == 'O' && a[1][1] == 'O' && a[1][2] == 'O') ||
@@ -58,6 +63,11 @@ while (a[0][0] == '1' ||
                (a[0][0] == 'O' && a[1][1] == 'O' && a[2][2] == 'O') ||
                (a[0][2] == 'O' && a[1][1] == 'O' && a[2][0] == 'O')) {
         printf("Player O wins!\n");
+        for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%c ", a[i][j]);
+        }
+        printf("\n");}
         break;
     }
 
@@ -68,5 +78,8 @@ for (int i = 0; i < 3; i++) {
         printf("\n");}
 }
 
+    // add draw case
+/*add computer logic(human vs computer) using random function
+rand() in <stdlib.h>*/
     return 0;
     }
