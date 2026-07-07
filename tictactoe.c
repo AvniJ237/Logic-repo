@@ -1,4 +1,5 @@
 //code is stil incomplete and needs to be completed
+//enter position even on computer turn 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -136,9 +137,14 @@ break;
             if (found) break;
         }
     }
-    else
-    { 
-    if((a[0][0] == 'X' && a[0][1] == 'X' && a[0][2] == 'X') ||
+    else{
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++)
+        {if (pos == a[i][j]) 
+                 a[i][j] = 'X';}}
+            
+    }
+     if((a[0][0] == 'X' && a[0][1] == 'X' && a[0][2] == 'X') ||
        (a[1][0] == 'X' && a[1][1] == 'X' && a[1][2] == 'X') ||
        (a[2][0] == 'X' && a[2][1] == 'X' && a[2][2] == 'X') ||
        (a[0][0] == 'X' && a[1][0] == 'X' && a[2][0] == 'X') ||
@@ -175,7 +181,8 @@ for (int i = 0; i < 3; i++) {
             printf("%c ", a[i][j]);
         }
         printf("\n");}
-
+    }
+    break;
 default:
         printf("Invalid number of players. Please enter 1 or 2.\n");
         break;
@@ -185,4 +192,4 @@ default:
 /*add computer logic(human vs computer) using random function
 rand() in <stdlib.h>*/
     return 0;
-    }
+}
