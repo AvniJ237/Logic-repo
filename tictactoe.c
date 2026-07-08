@@ -6,7 +6,7 @@
 int main() {
     char a[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}},pos;
     int players;
-    printf("Welcome to Tic Tac Toe!\n The board is numbered as follows:\n Enter number of players (1 or 2): ");
+    printf("Welcome to Tic Tac Toe!\n Enter number of players (1 or 2): ");
     scanf("%d", &players);
     switch (players)
     {
@@ -107,8 +107,7 @@ break;
        a[2][1] == '8' ||
        a[2][2] == '9')
 {  
-    printf("Enter a position (1-9): \n");
-    scanf(" %c",&pos);
+   
      int countx=0,counto=0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -120,7 +119,7 @@ break;
         }
     }
    if(countx > counto)
-    {
+    {  printf("Computer's turn (O):\n");
         while (1) {
             int randomPos = rand() % 9 + 1;
             int found = 0;
@@ -138,6 +137,8 @@ break;
         }
     }
     else{
+         printf("Enter a position (1-9): \n");
+    scanf(" %c",&pos);
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++)
         {if (pos == a[i][j]) 
