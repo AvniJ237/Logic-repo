@@ -6,18 +6,17 @@ secret = digits[:4]
 while True:
     guess = [int(d) for d in input("Enter your 4-digit guess: ")]
     if len(guess) == 4:
-        continue
+        if guess == secret:
+            print("Congratulations! You guessed the number.")
+            break
+        else:
+            for i in range(4):
+                for j in range(4):
+                    if guess[i] == secret[j] and i == j:
+                        print("Correct number in correct position:", guess[i])
+                    elif guess[i] == secret[j] and i != j:
+                        print("Correct number in wrong position:", guess[i])
     else:
         print("Invalid input. Please enter exactly 4 digits between 0 and 9.")
 
-    if guess == secret:
-        print("Congratulations! You guessed the number.")
-        break
-    else:
-        for i in range(4):
-            for j in range(4):
-                if guess[i] == secret[j] and i == j:
-                    print("Correct number in correct position:", guess[i])
-                elif guess[i] == secret[j] and i != j:
-                    print("Correct number in wrong position:", guess[i])
 
