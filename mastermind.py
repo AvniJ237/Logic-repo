@@ -4,7 +4,7 @@ digits = [0,1,2,3,4,5,6,7,8,9]
 random.shuffle(digits)
 secret = digits[:4]
 while True:
-    guess = [int(d) for d in input("Enter your 4-digit guess: ")]
+    guess = [int(d) for d in input("Enter your 4-digit guess(0-9): ")]
     if len(guess) == 4:
         if guess == secret:
             print("Congratulations! You guessed the number.")
