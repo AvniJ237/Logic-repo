@@ -16,8 +16,17 @@ ground=[['-','A','B','C','D','E','F','G','H'],
         ['7','_','_','_','_','_','_','_','_'],
         ['8','_','_','_','_','_','_','_','_']
 ]
-board=ground
-for row in ground:
+board=[['-','A','B','C','D','E','F','G','H'],
+        ['1','_','_','_','_','_','_','_','_'],
+        ['2','_','_','_','_','_','_','_','_'],
+        ['3','_','_','_','_','_','_','_','_'],
+        ['4','_','_','_','_','_','_','_','_'],
+        ['5','_','_','_','_','_','_','_','_'],
+        ['6','_','_','_','_','_','_','_','_'],
+        ['7','_','_','_','_','_','_','_','_'],
+        ['8','_','_','_','_','_','_','_','_']
+]
+for row in board:
     for cell in row:
         print(cell, end=" ")
     print()
@@ -29,11 +38,31 @@ while mines_placed < 8:
     if ground[row][col]=='_':
         ground[row][col]='*'
         mines_placed += 1
-
-for row in ground:
-    for cell in row:
-        print(cell, end=" ")
-    print()
+#add numbers to the ground
+#for row in ground:
+   # for cell in row: 
 #while all mines not flaged and no mines exploded and places still left to open
-work=input("open or flag(O/F):")
-cell=input("enter the cell number(For eg: Z9)")
+
+while True:
+    work=input("open or flag(O/F):").upper()
+    cell=input("enter the cell number(For eg: Z9)").upper()
+    row=int(cell[1])
+    col=ord(cell[0])-64
+    if work=="O":
+        if ground[row][col]=='*':
+            print("Game Over")
+            break
+        else:
+            board[row][col]=ground[row][col]
+            for row in board:
+                for cell in row:
+                    print(cell, end=" ")
+                print()
+    elif work=="F":
+        board[row][col]='!'
+        for row in board:
+            for cell in row:
+                print(cell, end=" ")
+            print()
+    else:
+        print("Invalid input") 
