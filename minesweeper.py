@@ -41,7 +41,7 @@ while mines_placed < 8:
         mines_placed += 1
 #add numbers to the ground
 #for row in ground:
-# for cell in row: 
+# for cell in row:
 #while all mines not flaged and no mines exploded and places still left to open
 for row in range(1,9):
     for col in range(1,9):
